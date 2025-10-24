@@ -8,6 +8,32 @@
     <artifactId>finitegenerator</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
+    <name>finitegenerator</name>
+    <description>Finite Iterables from either finite and infinite sequences in Java</description>
+    <url>https://github.com/gilacc/finitegenerator</url>
+    <licenses>
+        <license>
+            <name>GNU General Public License v3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>gilacc</id>
+            <name>Antonio Gil</name>
+            <email>agilgdam@gmail.com</email>
+            <organization>gilacc.github.io</organization>
+            <organizationUrl>https://github.com/gilacc</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/gilacc/finitegenerators.git</connection>
+        <developerConnection>scm:git:ssh://github.com/gilacc/finitegenerators.git</developerConnection>
+        <url>http://github.com/gilacc/finitegenerators/tree/master</url>
+    </scm>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
