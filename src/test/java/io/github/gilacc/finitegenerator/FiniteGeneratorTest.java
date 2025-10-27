@@ -37,31 +37,59 @@ class FiniteGeneratorTest {
     }
 
     @Test
+    void givenInfiniteIterator_whenImplicitLimitGeneratorToList_thenListSizeIsCorrect() {
+        final Iterator<Integer> infinite = nonNegativeNumbersSequence().iterator();
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite);
+        assertThat(generator.toList().size(), is(32767));
+    }
+
+    @Test
+    void givenInfiniteIterable_whenImplicitLimitGeneratorToList_thenListSizeIsCorrect() {
+        final Iterable<Integer> infinite = () -> nonNegativeNumbersSequence().iterator();
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite);
+        assertThat(generator.toList().size(), is(32767));
+    }
+
+    @Test
+    void givenInfiniteIterator_whenImplicitLimitGeneratorToSet_thenListSizeIsCorrect() {
+        final Iterator<Integer> infinite = nonNegativeNumbersSequence().iterator();
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite);
+        assertThat(generator.toSet().size(), is(32767));
+    }
+
+    @Test
+    void givenInfiniteIterable_whenImplicitLimitGeneratorToSet_thenListSizeIsCorrect() {
+        final Iterable<Integer> infinite = () -> nonNegativeNumbersSequence().iterator();
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite);
+        assertThat(generator.toSet().size(), is(32767));
+    }
+
+    @Test
     void givenInfiniteIterator_whenExplicitLimitGeneratorToList_thenListSizeIsCorrect() {
         final Iterator<Integer> infinite = nonNegativeNumbersSequence().iterator();
-        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 32767);
-        assertThat(generator.toList().size(), is(32767));
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 1000);
+        assertThat(generator.toList().size(), is(1000));
     }
 
     @Test
     void givenInfiniteIterable_whenExplicitLimitGeneratorToList_thenListSizeIsCorrect() {
         final Iterable<Integer> infinite = () -> nonNegativeNumbersSequence().iterator();
-        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 32767);
-        assertThat(generator.toList().size(), is(32767));
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 1000);
+        assertThat(generator.toList().size(), is(1000));
     }
 
     @Test
     void givenInfiniteIterator_whenExplicitLimitGeneratorToSet_thenSetSizeIsCorrect() {
         final Iterator<Integer> infinite = nonNegativeNumbersSequence().iterator();
-        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 32767);
-        assertThat(generator.toSet().size(), is(32767));
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 1000);
+        assertThat(generator.toSet().size(), is(1000));
     }
 
     @Test
     void givenInfiniteIterable_whenExplicitLimitGeneratorToSet_thenSetSizeIsCorrect() {
         final Iterable<Integer> infinite = () -> nonNegativeNumbersSequence().iterator();
-        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 32767);
-        assertThat(generator.toSet().size(), is(32767));
+        final FiniteGenerator<Integer> generator = new FiniteGenerator<>(infinite, 1000);
+        assertThat(generator.toSet().size(), is(1000));
     }
 
     @Test
