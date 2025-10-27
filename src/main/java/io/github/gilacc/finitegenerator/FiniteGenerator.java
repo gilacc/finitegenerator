@@ -43,11 +43,6 @@ import java.util.stream.StreamSupport;
 public class FiniteGenerator<T> implements Iterable<T> {
 
     /*
-     * The default limit that shall be imposed on the sequence, if the client does not provide one.
-     */
-    private static final int DEFAULT_LIMIT = Short.MAX_VALUE;
-
-    /*
      * The encapsulated Iterable that this object yields.
      */
     private final Iterable<T> iterable;
