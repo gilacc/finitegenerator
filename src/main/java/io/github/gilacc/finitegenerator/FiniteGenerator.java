@@ -43,6 +43,11 @@ import java.util.stream.StreamSupport;
 public class FiniteGenerator<T> implements Iterable<T> {
 
     /*
+     * The default limit that shall be imposed on the sequence, if the client does not provide one.
+     */
+    private static final int DEFAULT_LIMIT = 32767;
+
+    /*
      * The encapsulated Iterable that this object yields.
      */
     private final Iterable<T> iterable;
@@ -51,6 +56,24 @@ public class FiniteGenerator<T> implements Iterable<T> {
      * The effective limit that shall be imposed on the sequence.
      */
     private final int limit;
+
+    /**
+     * Constructs a {@code FiniteGenerator} for a given iterator, with a reasonable default limit.
+     *
+     * @param iterator the iterator to encapsulate
+     */
+    public FiniteGenerator(Iterator<T> iterator) {
+        this(iterator, FiniteGenerator.DEFAULT_LIMIT);
+    }
+
+    /**
+     * Constructs a {@code FiniteGenerator} for a given iterable, with a reasonable default limit.
+     *
+     * @param iterable the iterable to encapsulate
+     */
+    public FiniteGenerator(Iterable<T> iterable) {
+        this(iterable, FiniteGenerator.DEFAULT_LIMIT);
+    }
 
     /**
      * Constructs a {@code FiniteGenerator} for a given iterator and element number limit.
