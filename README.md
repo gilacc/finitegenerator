@@ -1,5 +1,8 @@
 # FiniteGenerator
 
+[![mvn](https://github.com/gilacc/finitegenerator/actions/workflows/maven.yml/badge.svg)](https://github.com/gilacc/finitegenerator/actions/workflows/maven.yml)
+![GitHub License](https://img.shields.io/github/license/gilacc/finitegenerator)
+
 A small Java utility library to create finite `Iterable`s from either finite or infinite `Iterable`s and `Iterator`s.
 The library provides a single class, `FiniteGenerator`, which is an immutable container that decorates a sequence and
 imposes a reasonable limit on how many elements it can produce; this can be very helpful for working with `Iterables`
