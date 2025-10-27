@@ -40,7 +40,7 @@ import java.util.stream.StreamSupport;
  *
  * @param <T> the type of elements returned by the sequence
  */
-public class FiniteGenerator<T> implements Iterable<T> {
+public final class FiniteGenerator<T> implements Iterable<T> {
 
     /*
      * The default limit that shall be imposed on the sequence, if the client does not provide one.
